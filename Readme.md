@@ -3,8 +3,8 @@
 Track the evaluations of the positions in Stefan Pohl's
 openings books from [sp-cc.de](https://www.sp-cc.de/uho_xxl_project.htm)
 on [chessdb.cn](https://chessdb.cn/queryc_en/) (cdb). 
-There are 693291 unique positions in total. Their average depth is XXX plies,
-with the deepest one XXX plies away from the starting position. 
+There are 693291 unique positions in total. They all arise as positions
+after 8 moves in human games, but on cdb their average depth is XXX plies.
 The positions
 have 30.5 pieces on average, and none has fewer than 24 pieces on the board.\
 
