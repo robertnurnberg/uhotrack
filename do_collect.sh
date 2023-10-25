@@ -18,4 +18,4 @@ git add uhotrack.csv uho_daily_shortest.epd
 git diff --staged --quiet || git commit -m "update data"
 git push origin main >&push.log
 
-gzip uho_cdbpv.epd && mv uho_cdbpv.epd.gz ../../google-drive/cdb
+gzip uho_cdbpv.epd && mv uho_cdbpv.epd.gz ../../google-drive/cdb/
