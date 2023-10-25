@@ -9,7 +9,7 @@ with an average depth on cdb of 12.6 plies.
 The positions have 30.6 pieces on average, and none has fewer than 23 pieces 
 on the board.
 
-The offline file [`uho_cdbpv.epd`] is created regularly
+The file [`uho_cdbpv.epd.gz`](https://drive.google.com/file/d/1yR3AlKSEcrezsSDRPPyD99N9vry_NArD/view?usp=sharing) is created regularly
 with the help of the script `cdbbulkpv.py` from 
 [cdblib](https://github.com/robertnurnberg/cdblib), and the obtained statistics
 are written to [`uhotrack.csv`](uhotrack.csv).
@@ -46,7 +46,7 @@ run the script `launch_uho_daily.sh`
 tempdir="/tmp/uhotrack"
 gitdir="$HOME/git"
 bulkconcurrency=8
-depthlimit=20
+depthlimit=10
 user="unknown"
 
 for dir in "$tempdir" "$gitdir"; do
