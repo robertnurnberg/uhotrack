@@ -1,24 +1,16 @@
 # UHOtrack
 
-Track the evaluations of the positions in Stefan Pohl's
-openings books from [sp-cc.de](https://www.sp-cc.de/uho_xxl_project.htm)
+Track the evaluations of the book `UHO_Lichess_4852_v1.epd` from
+[official-stockfish/books](https://github.com/official-stockfish/books)
 on [chessdb.cn](https://chessdb.cn/queryc_en/) (cdb). 
-There are 693291 unique positions in total. They all arise as positions
-after 8 moves in human games, but on cdb their average depth is 15.9 plies,
-with the distribution of their depths in plies given by
-`4: 2, 8: 11, 10: 58, 12: 1918, 14: 17621, 16: 673681`.
-The positions have 30.5 pieces on average, and none has fewer than 24 pieces 
+There are 2632036 unique positions in total. They all arose as positions
+from human games on [Lichess](https://lichess.org) in 2023, 
+with an average depth on cdb of 12.6 plies.
+The positions have 30.6 pieces on average, and none has fewer than 23 pieces 
 on the board.
 
-The file book `uho.epd` was created with the command
-```shell
-cat UHO_MEGA_2022_+110_+149.epd UHO_XXL_2022_+100_+129.epd UHO_XXL_+0.80_+1.09.epd UHO_XXL_2022_+110_+139.epd UHO_XXL_+0.90_+1.19.epd UHO_XXL_2022_+120_+149.epd UHO_XXL_+1.00_+1.29.epd | awk '{print $1, $2, $3, $4}' | sort | uniq | shuf > uho.epd
-```
-based on the books available from
-[official-stockfish/books](https://github.com/official-stockfish/books).
-The file [`uho_cdbpv.epd`](uho_cdbpv.epd) 
-contains the current cdb evaluations and PVs for each position. It is created 
-daily with the help of the script `cdbbulkpv.py` from 
+The file [`uho_cdbpv.epd.gz`](https://drive.google.com/file/d/1yR3AlKSEcrezsSDRPPyD99N9vry_NArD/view?usp=sharing) is created regularly
+with the help of the script `cdbbulkpv.py` from 
 [cdblib](https://github.com/robertnurnberg/cdblib), and the obtained statistics
 are written to [`uhotrack.csv`](uhotrack.csv).
 
@@ -54,7 +46,7 @@ run the script `launch_uho_daily.sh`
 tempdir="/tmp/uhotrack"
 gitdir="$HOME/git"
 bulkconcurrency=8
-depthlimit=20
+depthlimit=10
 user="unknown"
 
 for dir in "$tempdir" "$gitdir"; do
