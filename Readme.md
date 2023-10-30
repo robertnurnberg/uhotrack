@@ -1,6 +1,7 @@
 # UHOtrack
 
-Track the evaluations of the book `UHO_Lichess_4852_v1.epd` from
+Track the evaluations of the book
+[`UHO_Lichess_4852_v1.epd`](https://github.com/official-stockfish/books/raw/master/UHO_Lichess_4852_v1.epd.zip) from
 [official-stockfish/books](https://github.com/official-stockfish/books)
 on [chessdb.cn](https://chessdb.cn/queryc_en/) (cdb). 
 There are 2632036 unique positions in total. They all arose as positions
