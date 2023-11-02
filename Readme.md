@@ -4,7 +4,7 @@ Track the evaluations of the book
 [`UHO_Lichess_4852_v1.epd`](https://github.com/official-stockfish/books/raw/master/UHO_Lichess_4852_v1.epd.zip) from
 [official-stockfish/books](https://github.com/official-stockfish/books)
 on [chessdb.cn](https://chessdb.cn/queryc_en/) (cdb). 
-There are 2632036 unique positions in total. They all arose as positions
+The book contains 2632036 unique positions in total. They all arose as positions
 from human games on [Lichess](https://lichess.org) in 2023, 
 with an average depth on cdb of 12.9 plies.
 The positions have 30.6 pieces on average, and none has fewer than 23 pieces 
