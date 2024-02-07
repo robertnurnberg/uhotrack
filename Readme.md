@@ -6,7 +6,7 @@ Track the evaluations of the book
 on [chessdb.cn](https://chessdb.cn/queryc_en/) (cdb). 
 The book contains 2632036 unique positions in total. They all arose as positions
 from human games on [Lichess](https://lichess.org) in 2023, 
-with an average depth on cdb of 12.9 plies.
+with an average depth on cdb of 13.2 plies.
 The positions have 30.6 pieces on average, and none has fewer than 23 pieces 
 on the board.
 
