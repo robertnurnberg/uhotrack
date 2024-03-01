@@ -5,10 +5,10 @@ Track the evaluations of the book
 [official-stockfish/books](https://github.com/official-stockfish/books)
 on [chessdb.cn](https://chessdb.cn/queryc_en/) (cdb). 
 The book contains 2632036 unique positions in total. They all arose as positions
-from human games on [Lichess](https://lichess.org) in 2023, 
-with an average depth on cdb of 13.2 plies.
-The positions have 30.6 pieces on average, and none has fewer than 23 pieces 
-on the board.
+from human games on [Lichess](https://lichess.org) in 2023, at a depth of
+between 2 and 16 plies.
+On cdb they have an average depth of 13.2 plies, as well as 30.6 pieces on 
+average. No position has fewer than 23 pieces on the board.
 
 The file [`uho_cdbpv.epd.gz`](https://drive.google.com/file/d/1yR3AlKSEcrezsSDRPPyD99N9vry_NArD/view?usp=sharing) is created regularly
 with the help of the script `cdbbulkpv.py` from 
