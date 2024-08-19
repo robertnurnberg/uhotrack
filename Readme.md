@@ -49,3 +49,12 @@ automatically via `.crontab` entries of the form
 ```
 where the second entry is really only needed for server-like machines that run
 24/7.
+
+---
+
+## Get in touch
+
+To discuss anything cdb related, and to help cdb grow at a healthy pace, join
+other (computer) chess enthusiasts at the [chessdbcn channel](
+https://discord.com/channels/435943710472011776/1101022188313772083) on the
+[Stockfish discord server](https://discord.gg/ZzJwPv3).
