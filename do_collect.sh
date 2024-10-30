@@ -10,7 +10,7 @@ if [ -f "$temp_file" ]; then
     exit 0
 fi
 
-python ../cdblib/cdbbulkpv.py -c 16 --stable --user rob uho.epd >"$temp_file"
+python ../cdblib/cdbbulkpv.py -c 8 --stable --user rob uho.epd >"$temp_file"
 
 mv "$temp_file" uho_cdbpv.epd
 
