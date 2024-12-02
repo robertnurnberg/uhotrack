@@ -27,12 +27,14 @@ are written to [`uhotrack.csv`](uhotrack.csv).
 
 ## Progress
 
-The following graph attempts to measure the progress cdb makes in exploring
+The following graphs attempt to measure the progress cdb makes in exploring
 and evaluating the positions in `uho.epd`. See
 [caissatrack](https://github.com/robertnurnberg/caissatrack)
 for a precise description of the plotted indicators.
 
 <p align="center"> <img src="uhotracktime.png?raw=true"> </p>
+
+<p align="center"> <img src="uhotracktime-100.png?raw=true"> </p>
 
 ---
 
