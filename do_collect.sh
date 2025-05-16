@@ -3,22 +3,34 @@
 # exit on errors
 set -e
 
-temp_file="_tmp_uho_cdbpv.epd"
+PREFIX="uho"
+SOURCE="${PREFIX}.epd"
+DEST="${PREFIX}_cdbpv.epd"
+TEMP_FILE="_tmp_$DEST"
+TRIMMED="${PREFIX}_trimmed.epd"
+ORACLE="../caissatrack/caissa_sorted_100000_cdbpv.epd ../ecotrack/eco_cdbpv.epd ../chopstrack/chops_cdbpv.epd"
+FILTER="python ../cdblib/addons/fens_filter_overlap.py --saveMemory --noStats"
+CDBBULK="python ../cdblib/cdbbulkpv.py -s -c 8 --stable --user rob"
+SCORE="python ../cdblib/addons/score_fens_locally.py"
 
-if [ -f "$temp_file" ]; then
-    echo "$temp_file already exists. Exiting."
+if [ -f "$TEMP_FILE" ]; then
+    echo "$TEMP_FILE already exists. Exiting."
     exit 0
 fi
 
-python ../cdblib/cdbbulkpv.py -s -c 8 --stable --user rob uho.epd >"$temp_file"
+$FILTER $SOURCE $ORACLE >"$TRIMMED"
+$CDBBULK "$TRIMMED" >"$TEMP_FILE"
+$SCORE $SOURCE $TEMP_FILE $ORACLE >"$DEST"
+rm "$TEMP_FILE"
 
-mv "$temp_file" uho_cdbpv.epd
+CSV="${PREFIX}track.csv"
+SHORTEST="${PREFIX}_daily_shortest.epd"
 
-python ../caissatrack/caissatrack.py uho_cdbpv.epd >>uhotrack.csv
-python ../caissatrack/extract_fens.py uho_cdbpv.epd --shortest 1000 --ignore2folds >uho_daily_shortest.epd
+python ../caissatrack/caissatrack.py "$DEST" >>"$CSV"
+python ../caissatrack/extract_fens.py "$DEST" --shortest 1000 --ignore2folds >"$SHORTEST"
 
-git add uhotrack.csv uho_daily_shortest.epd
+git add "$DEST" "$CSV" "$SHORTEST"
 git diff --staged --quiet || git commit -m "update data"
 git push origin main >&push.log
 
-gzip uho_cdbpv.epd && mv uho_cdbpv.epd.gz ../../google-drive/cdb/
+gzip "$DEST" && mv "${DEST}.gz" ../../google-drive/cdb/
