@@ -29,8 +29,8 @@ SHORTEST="${PREFIX}_daily_shortest.epd"
 python ../caissatrack/caissatrack.py "$DEST" >>"$CSV"
 python ../caissatrack/extract_fens.py "$DEST" --shortest 1000 --ignore2folds >"$SHORTEST"
 
-git add "$DEST" "$CSV" "$SHORTEST"
+git add "$CSV" "$SHORTEST"
 git diff --staged --quiet || git commit -m "update data"
 git push origin main >&push.log
 
-gzip "$DEST" && mv "${DEST}.gz" ../../google-drive/cdb/
+gzip "$DEST" && cp "${DEST}.gz" ../../google-drive/cdb/
