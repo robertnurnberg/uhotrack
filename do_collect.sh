@@ -33,4 +33,4 @@ git add "$CSV" "$SHORTEST"
 git diff --staged --quiet || git commit -m "update data"
 git push origin main >&push.log
 
-gzip "$DEST" && cp "${DEST}.gz" ../../google-drive/cdb/
+gzip -f "$DEST" && cp "${DEST}.gz" ../../google-drive/cdb/
