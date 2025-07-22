@@ -7,7 +7,7 @@ on [chessdb.cn](https://chessdb.cn/queryc_en/) (cdb).
 The book contains 2632036 unique positions in total. They all arose as positions
 from human games on [Lichess](https://lichess.org) in 2023, at a depth of
 between 2 and 16 plies, with an average of 13.3 plies.
-On cdb they have an average depth of 13.1 plies. On average,
+On cdb they have an average depth of 13.2 plies. On average,
 the positions have 30.6 pieces, with no position having fewer than 23.
 
 The file [`uho_cdbpv.epd.gz`](https://drive.google.com/file/d/1gsIh3qlc8PQLLDv_zTFzSbp_-MxHty-6/view?usp=sharing) is created regularly
