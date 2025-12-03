@@ -7,6 +7,7 @@ PREFIX="uho"
 SOURCE="${PREFIX}.epd"
 DEST="${PREFIX}_cdbpv.epd"
 TEMP_FILE="_tmp_$DEST"
+LITRACK_FILE="../litrack/litrack.lock"
 TRIMMED="${PREFIX}_trimmed.epd"
 ORACLE="../caissatrack/caissa_sorted_100000_cdbpv.epd ../ecotrack/eco_cdbpv.epd ../chopstrack/chops_cdbpv.epd"
 FILTER="python ../cdblib/addons/fens_filter_overlap.py --saveMemory --noStats"
@@ -14,8 +15,13 @@ CDBBULK="python ../cdblib/cdbbulkpv.py -s -c 8 --stable --user rob"
 SCORE="python ../cdblib/addons/score_fens_locally.py"
 
 if [ -f "$TEMP_FILE" ]; then
-    echo "$TEMP_FILE already exists. Exiting."
-    exit 0
+  echo "$TEMP_FILE already exists. Exiting."
+  exit 0
+fi
+
+if [ -f "$LITRACK_FILE" ]; then
+  echo "$LITRACK_FILE exists. Exiting."
+  exit 0
 fi
 
 $FILTER $SOURCE $ORACLE >"$TRIMMED"
